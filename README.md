@@ -1,3 +1,5 @@
+the below is the steps taken for the data science course to create a interactive website/graph:
+
 # D3 Homework - Data Journalism and D3
 
 ![Newsroom](https://media.giphy.com/media/v2xIous7mnEYg/giphy.gif)
