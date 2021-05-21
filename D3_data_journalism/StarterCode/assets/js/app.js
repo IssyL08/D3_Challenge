@@ -13,7 +13,8 @@ let margin = {
 };
 
 // calculate chart height and width
-
+let width = svgWidth - margin.right - margin.left;
+let height = svgHeight - margin.top - margin.bottom;
 
 // append a div class to the scatter element
 let chart = d3.select('#scatter')
