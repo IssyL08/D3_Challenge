@@ -326,9 +326,7 @@ d3.csv('./assets/data/data.csv').then(function(censusData) {
         .on('click', function() {
             var value = d3.select(this).attr('value');
 
-            if (value != chosenYAxis) {
-                //replace chosenY with value  
-                chosenYAxis = value;
+
 
                 //update Y scale
                 yLinearScale = yScale(censusData, chosenYAxis);
