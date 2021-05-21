@@ -267,7 +267,16 @@ d3.csv('./assets/data/data.csv').then(function(censusData) {
         .attr('value', 'smokes')
         .text('Smoker (%)');
 
-    
+    var obesityLabel = yLabelsGroup.append('text')
+        .classed('aText', true)
+        .classed('inactive', true)
+        .attr('x', 0)
+        .attr('y', 0 - 60)
+        .attr('dy', '1em')
+        .attr('transform', 'rotate(-90)')
+        .attr('value', 'obesity')
+        .text('Obese (%)');
+
     //update the toolTip
     var circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
 
