@@ -89,15 +89,7 @@ function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYA
 }
 
 //function for updating STATE labels
-function renderText(textGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
 
-    textGroup.transition()
-        .duration(2000)
-        .attr('x', d => newXScale(d[chosenXAxis]))
-        .attr('y', d => newYScale(d[chosenYAxis]));
-
-    return textGroup
-}
 //function to stylize x-axis values for tooltips
 function styleX(value, chosenXAxis) {
 
