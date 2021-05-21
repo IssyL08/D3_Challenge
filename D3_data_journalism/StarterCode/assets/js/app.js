@@ -193,15 +193,7 @@ d3.csv('./assets/data/data.csv').then(function(censusData) {
         .call(leftAxis);
 
     //append Circles
-    var circlesGroup = chartGroup.selectAll('circle')
-        .data(censusData)
-        .enter()
-        .append('circle')
-        .classed('stateCircle', true)
-        .attr('cx', d => xLinearScale(d[chosenXAxis]))
-        .attr('cy', d => yLinearScale(d[chosenYAxis]))
-        .attr('r', 14)
-        .attr('opacity', '.5');
+
 
     //append Initial Text
     var textGroup = chartGroup.selectAll('.stateText')
