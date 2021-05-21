@@ -88,13 +88,21 @@ function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYA
     return circlesGroup;
 }
 
-//function for updating STATE labels
+//function for updating state labels
+function renderText(textGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
+
+    textGroup.transition()
+        .duration(2000)
+        .attr('x', d => newXScale(d[chosenXAxis]))
+        .attr('y', d => newYScale(d[chosenYAxis]));
+
+    return textGroup
+}
 
 //function to stylize x-axis values for tooltips
 function styleX(value, chosenXAxis) {
 
-    //style based on variable
-    //poverty
+    //style based on variable poverty
     if (chosenXAxis === 'poverty') {
         return `${value}%`;
     }
@@ -259,16 +267,7 @@ d3.csv('./assets/data/data.csv').then(function(censusData) {
         .attr('value', 'smokes')
         .text('Smoker (%)');
 
-    var obesityLabel = yLabelsGroup.append('text')
-        .classed('aText', true)
-        .classed('inactive', true)
-        .attr('x', 0)
-        .attr('y', 0 - 60)
-        .attr('dy', '1em')
-        .attr('transform', 'rotate(-90)')
-        .attr('value', 'obesity')
-        .text('Obese (%)');
-
+    
     //update the toolTip
     var circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
 
